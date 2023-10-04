@@ -1,0 +1,106 @@
+@use "../../styles/mixins" as *;
+@import "../../styles/colors";
+
+.hero {
+  margin-top: 10rem;
+
+  &__section {
+    background-color: $color-primary4;
+    max-width: 80rem;
+    margin: 0 auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    border: 3px solid #5e716a;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 2rem;
+
+    @include mini {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__description {
+    max-width: 40rem;
+    font-size: 2.8rem;
+
+    @include desktop {
+      font-size: 2.4rem;
+    }
+
+    @include landscape {
+      font-size: 1.8rem;
+    }
+
+    @include mini {
+      font-size: 2.3rem;
+    }
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__icons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+
+    @include mini {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include landscape {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__button {
+    margin-left: 2rem;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: $color-primary3;
+    font-weight: bold;
+    border: 2px solid $color-primary5;
+    transition: all 0.5s;
+
+    &:hover {
+      // background-color: $color-background;
+      color: $color-primary5;
+      border: 2px solid $color-primary3;
+    }
+
+    @include landscape {
+      padding: 0.5rem 1rem;
+    }
+
+    @include mini {
+      padding: 0.4rem 0.8rem;
+    }
+
+    @include mobile {
+      margin-left: 0;
+    }
+  }
+}

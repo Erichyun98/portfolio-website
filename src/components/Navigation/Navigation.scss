@@ -1,0 +1,89 @@
+@use "../../styles/mixins" as *;
+@import "../../styles/colors";
+
+.navigation {
+  background-color: $color-primary4;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99 !important;
+  padding: 2rem;
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    display: inline-block;
+    letter-spacing: 0.4rem;
+    color: $color-primary5;
+  }
+
+  &__lists {
+    display: flex;
+    gap: 1rem;
+
+    @include mini {
+      display: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    font-weight: bold;
+    text-decoration: none;
+    color: $color-primary;
+
+    &:hover {
+      color: $color-primary3;
+    }
+  }
+
+  &__bars {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__button {
+    border: none;
+    display: none;
+    cursor: pointer;
+    background-color: $color-primary4;
+
+    @include mini {
+      display: block;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__responsive {
+    @include mini {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $color-primary4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  }
+}

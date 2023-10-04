@@ -1,0 +1,83 @@
+@use "../../styles/mixins" as *;
+@import "../../styles/colors";
+
+.project {
+  padding-top: 10rem;
+
+  &__section {
+    background-color: $color-primary4;
+    margin: 0 auto;
+    max-width: 50rem;
+    padding: 2rem;
+    border: 3px solid $color-primary3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+
+    @include tablet {
+      max-width: 45rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__detail {
+    text-align: center;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 1rem;
+
+    @include mini {
+      grid-template-columns: none;
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    background-color: $color-primary6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+  }
+
+  &__info {
+    font-weight: bold;
+  }
+
+  &__img {
+    height: 6rem;
+    width: 6rem;
+    border: 2px solid $color-primary5;
+    border-radius: 50%;
+  }
+
+  &__button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 2px solid $color-primary5;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: $color-primary4;
+    transition: all 0.4s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-primary3;
+  }
+}

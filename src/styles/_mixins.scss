@@ -1,0 +1,35 @@
+$small-desktop-breakpoint: 1344px;
+$landscape-tablet-breakpoint: 1200px;
+$tablet-breakpoint: 944px;
+$smaller-tablet-breakpoint: 704px;
+$phone-breakpoint: 544px;
+
+@mixin desktop {
+  @media (max-width: $small-desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (max-width: $landscape-tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mini {
+  @media (max-width: $smaller-tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $phone-breakpoint) {
+    @content;
+  }
+}

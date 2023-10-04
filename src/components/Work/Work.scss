@@ -1,0 +1,129 @@
+@use "../../styles/mixins" as *;
+@import "../../styles/colors";
+
+.work {
+  padding-top: 10rem;
+
+  &__section {
+    background-color: $color-primary4;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 3px solid #5e716a;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+
+    @include tablet {
+      max-width: 45rem;
+    }
+
+    @include mini {
+      grid-template-rows: 1fr 3fr;
+      grid-template-columns: none;
+      padding: 1rem;
+    }
+
+    @include mobile {
+      overflow: scroll;
+    }
+  }
+
+  &__combined {
+    // display: grid;
+    // grid-template-rows: 1fr 1fr;
+    border-left: 3px solid $color-primary3;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.8;
+
+    &:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 0;
+      left: -6px;
+      border-radius: 50%;
+      background-color: $color-primary5;
+    }
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      bottom: 0;
+      left: -6px;
+      border-radius: 50%;
+      background-color: $color-primary5;
+    }
+
+    @include mini {
+      padding-left: 0;
+    }
+  }
+
+  &__container {
+    &--border {
+      // border-bottom: 3px solid $color-primary3;
+      padding-bottom: 1rem;
+    }
+    &--bottom {
+      padding-top: 1rem;
+    }
+  }
+
+  &__individual {
+    margin-bottom: 1rem;
+  }
+
+  &__main {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    @include mini {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    border: 2px solid $color-primary3;
+    text-align: center;
+    background-color: $color-primary3;
+    color: $color-primary4;
+    font-size: 1.1rem;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+
+  &__date {
+    text-align: center;
+    font-weight: bold;
+    color: $color-primary5;
+  }
+
+  &__details {
+    margin: 0 0 1rem 1rem;
+  }
+}
+
+// Carousel
+.slide {
+  padding: 1rem;
+}
+
+.dot {
+  background-color: $color-primary3 !important;
+}
+
+.control-arrow {
+  background-color: $color-primary3;
+}
